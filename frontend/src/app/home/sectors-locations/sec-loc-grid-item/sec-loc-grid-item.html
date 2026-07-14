@@ -1,0 +1,8 @@
+<a [routerLink]="['/search']"
+  [queryParams]="{ keywords: title(), location: '' }" class="flex cursor-pointer flex-col gap-2">
+  <img [src]="img()" [alt]="title()"
+    class="aspect-video h-[110px] rounded-md object-cover md:h-[280px] lg:h-[180px]" />
+  <span class="cursor-pointer font-medium text-rd-blue md:text-lg">
+    {{ title() }}
+  </span>
+</a>

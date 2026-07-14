@@ -1,0 +1,111 @@
+<div class="bg-rd-drkblue lg:grid lg:justify-center lg:py-[45px] pt-10">
+  <ul class="flex flex-col justify-between lg:hidden">
+    <li class="w-full border-b border-b-[#535a86]">
+      <nav>
+        <h3 (click)="toggleSection('jobs')" (keydown.enter)="toggleSection('jobs')" tabindex="0" class="cursor-pointer px-4 py-5 font-medium text-white">JOBS</h3>
+        @if (openSection() === 'jobs') {
+        <ul class="flex flex-col gap-2 space-y-2 bg-[#0b143b] px-6 py-4">
+          <li><a href="#" class="text-sm font-medium text-white">Link</a></li>
+          <li><a href="#" class="text-sm font-medium text-white">Link</a></li>
+        </ul>
+        }
+      </nav>
+    </li>
+
+  <li class="w-full border-b border-b-[#535a86]">
+    <nav>
+      <h3 (click)="toggleSection('recruiter')" (keydown.enter)="toggleSection('recruiter')" tabindex="0" class="cursor-pointer px-4 py-5 font-medium text-white">RECRUITER</h3>
+      @if (openSection() === 'recruiter') {
+      <ul class="flex flex-col gap-2 space-y-2 bg-[#0b143b] px-6 py-4">
+        <li><a href="#" class="text-sm font-medium text-white">Link</a></li>
+        <li><a href="#" class="text-sm font-medium text-white">Link</a></li>
+      </ul>
+      }
+    </nav>
+  </li>
+  
+  <li class="w-full border-b border-b-[#535a86]">
+    <nav>
+      <h3 (click)="toggleSection('courses')"  (keydown.enter)="toggleSection('courses')" tabindex="0"  class="cursor-pointer px-4 py-5 font-medium text-white">COURSES</h3>
+      @if (openSection() === 'courses') {
+      <ul class="flex flex-col gap-2 space-y-2 bg-[#0b143b] px-6 py-4">
+        <li><a href="#" class="text-sm font-medium text-white">Link</a></li>
+        <li><a href="#" class="text-sm font-medium text-white">Link</a></li>
+      </ul>
+      }
+    </nav>
+  </li>
+  
+  <li class="w-full border-b border-b-[#535a86]">
+    <nav>
+      <h3 (click)="toggleSection('more')"  (keydown.enter)="toggleSection('more')" tabindex="0"  class="cursor-pointer px-4 py-5 font-medium text-white">MORE FROM Reed.co.uk
+      </h3>
+      @if (openSection() === 'more') {
+      <ul class="flex flex-col gap-2 space-y-2 bg-[#0b143b] px-6 py-4">
+        <li><a href="#" class="text-sm font-medium text-white">Link</a></li>
+        <li><a href="#" class="text-sm font-medium text-white">Link</a></li>
+      </ul>
+      }
+    </nav>
+  </li>
+  
+  <li class="w-full border-b border-b-[#535a86]">
+    <nav>
+      <h3 (click)="toggleSection('reed')" (keydown.enter)="toggleSection('reed')" tabindex="0"  class="cursor-pointer px-4 py-5 font-medium text-white">REED</h3>
+      @if (openSection() === 'reed') {
+      <ul class="flex flex-col gap-2 space-y-2 bg-[#0b143b] px-6 py-4">
+        <li><a href="#" class="text-sm font-medium text-white">Link</a></li>
+        <li><a href="#" class="text-sm font-medium text-white">Link</a></li>
+      </ul>
+      }
+    </nav>
+  </li>
+  </ul>
+  
+  <!-- Desktop -->
+  <div class="flex flex-col gap-5">
+    <ul class="hidden bg-rd-drkblue lg:grid lg:min-w-[1024px] lg:grid-cols-5 lg:gap-5">
+      <li>
+        <h3 class="mb-5 font-medium text-white">JOBS</h3>
+        <nav class="flex flex-col gap-2 text-sm font-medium text-white">
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+        </nav>
+      </li>
+      <li>
+        <h3 class="mb-5 font-medium text-white">RECRUITER</h3>
+        <nav class="flex flex-col gap-2 text-sm font-medium text-white">
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+        </nav>
+      </li>
+      <li>
+        <h3 class="mb-5 font-medium text-white">COURSES</h3>
+        <nav class="flex flex-col gap-2 text-sm font-medium text-white">
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+        </nav>
+      </li>
+      <li>
+        <h3 class="mb-5 font-medium text-white">MORE</h3>
+        <nav class="flex flex-col gap-2 text-sm font-medium text-white">
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+        </nav>
+      </li>
+      <li>
+        <h3 class="mb-5 font-medium text-white">REED</h3>
+        <nav class="flex flex-col gap-2 text-sm font-medium text-white">
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+        </nav>
+      </li>
+    </ul>
+  
+    <div class="flex flex-col items-center justify-center py-[20px] lg:items-start">
+      <img src="love-mondays.png" alt="love mondays" class="w-[180px] lg:relative lg:right-[10px]" />
+      <p class="text-center text-xs text-white">COPYRIGHT Reed.co.uk</p>
+    </div>
+  </div>
+  
+  </div>
