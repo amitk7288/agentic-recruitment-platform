@@ -1,0 +1,17 @@
+<div class="flex flex-col rounded-md border border-[#c8c8c8] bg-white text-[#0f151a] md:w-[100%]">
+
+  <div class="flex items-center justify-between border-b p-4">
+    <p class="text-[20px] font-bold text-rdblack">{{title()}}</p>
+    <button class="flex cursor-pointer items-center gap-2 font-medium" (click)="openModal()">
+      <p class="hidden text-rdlightBlue s:block">{{headerLink()}}</p>
+      <div class="text-rdlightBlue"><ng-content select="[icon]" /></div>
+    </button>
+  </div>
+  <div class="p-4"><ng-content /></div>
+  <div [hidden]="!isOpen()">
+    <app-modal (closed)="closeModal()">
+        <ng-content select="[modalContent]" />
+    </app-modal>
+  </div>
+
+</div>

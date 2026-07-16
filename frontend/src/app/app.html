@@ -1,5 +1,9 @@
+@if (showHeader()) {
 <app-header />
-<main class="pt-12.5 lg:pt-15">
+}
+<main [class]="showHeader() ? 'pt-12.5 lg:pt-15' : ''">
   <router-outlet></router-outlet>
 </main>
+@if (showFooter()) {
 <app-footer />
+}

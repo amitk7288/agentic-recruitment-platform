@@ -16,6 +16,7 @@
   html {
     font-family: var(--font-redHat);
     color: #0f151a;
+    @apply antialiased;
   }
 }
 
