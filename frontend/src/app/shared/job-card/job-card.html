@@ -1,0 +1,60 @@
+<div class="flex flex-col gap-2.5 rounded-md border border-[#c8c8c8] bg-white px-3 py-2.5 text-[#0f151a] md:w-full"
+  [class.border-rd-pink]="jobSaved() && !jobApplied()" 
+  [class.border-green-600]="jobApplied()"
+  [class.bg-green-50]="jobApplied()">
+  <div id="header" class="flex items-center justify-between">
+    <div class="text-sm font-bold">
+      <div class="flex items-center gap-1">
+        <ng-icon name="featherZap" class="text-rd-pink" />
+        <p class="text-[#4d5054] s:text-base">Easy Apply</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 text-2xl">
+      <button (click)="handleSaveClick()" class="cursor-pointer" aria-label="Save job">
+
+        @if (jobSaved()) {
+        <div class="flex items-center gap-2">
+          <p class="text-sm font-semibold">Saved!</p>
+          <ng-icon name="featherHeart" [class.text-rd-pink]="jobSaved()" />
+        </div>
+        } @else {
+          <ng-icon name="featherHeart" />
+        }
+
+
+      </button>
+    </div>
+  </div>
+  <div class="md:flex md:justify-between">
+    <div id="body" class="flex flex-col gap-2.5">
+      <div>
+        <a [routerLink]="['/jobs', jobId()]" class="jobtitle text-lg font-bold text-rd-blue md:text-2xl">
+          {{title()}}
+        </a>
+        <div class="flex items-center gap-1">
+          <p class="date text-sm font-normal">Posted {{date()}}</p>
+          <p class="font-medium text-rd-blue">{{employer()}}</p>
+        </div>
+      </div>
+      <div class="meta grid grid-cols-2 gap-2 text-sm md:text-base">
+        <div class="salary flex items-center gap-2">
+          <ng-icon name="remixMoneyPoundCircleLine" class="text-base font-medium" />
+          <p>{{ min() && max() ? '£' + min() + ' - £' + max() : 'Competitive Salary' }}</p>
+        </div>
+        <div class="time flex items-center gap-2">
+          <ng-icon name="featherClock" class="text-base font-medium" />
+          <p>Permanent, full</p>
+        </div>
+        <div class="location flex items-center gap-2">
+          <ng-icon name="featherMapPin" class="text-base font-medium" />
+          <p>{{loc()}}</p>
+        </div>
+      </div>
+    </div>
+    <div id="footer" class="flex justify-end md:flex-col md:gap-4">
+      <button (click)="handleApplyClick()" class="mt-4 block w-full max-w-[300px] cursor-pointer rounded-sm border-2 border-rd-drkblue bg-white px-3 py-1.5 text-center font-medium text-rd-drkblue">
+        {{jobApplied() ? 'Applied!' : 'Easy Apply'}}
+      </button>
+    </div>
+  </div>
+</div>
