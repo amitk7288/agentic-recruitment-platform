@@ -1,0 +1,55 @@
+<div>
+  <h2 class="mb-3 text-xl font-bold">Add Qualification</h2>
+  <form class="flex flex-col gap-3" (ngSubmit)="handleAddQualification($event)">
+
+    <div class="flex flex-col gap-1">
+      <label for="name" class="label-style">Name</label>
+      <input type="text" id="name" name="qualificationName" placeholder="e.g. BA Hons Degree" [ngModel]="name()"
+        (ngModelChange)="name.set($event)" class="input-style" />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="school" class="label-style">School</label>
+      <input type="text" id="school" name="school" placeholder="e.g. University of Birmingham" [ngModel]="school()"
+        (ngModelChange)="school.set($event)" class="input-style" />
+    </div>
+
+    <div class="flex flex-col gap-4 sm:flex-row">
+      <div class="flex flex-col">
+        <label for="subject" class="label-style">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="e.g. Computer Science" [ngModel]="subject()"
+          (ngModelChange)="subject.set($event)" class="input-style" />
+      </div>
+      <div class="flex flex-col">
+        <label for="grade" class="label-style">Grade</label>
+        <input type="text" id="grade" name="grade" placeholder="2:1" [ngModel]="grade()"
+          (ngModelChange)="grade.set($event)" class="input-style" />
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-4 sm:flex-row">
+      <div class="flex flex-col">
+        <label for="year-start" class="label-style">Year start</label>
+        <input type="text" id="year-start" name="yearStart" placeholder="e.g. 2022" [ngModel]="yearStart()"
+          (ngModelChange)="yearStart.set($event)" class="input-style" />
+      </div>
+      <div class="flex flex-col">
+        <label for="year-end" class="label-style">Year end</label>
+        <input type="text" id="year-end" name="yearEnd" placeholder="e.g. 2024" [ngModel]="yearEnd()"
+          (ngModelChange)="yearEnd.set($event)" class="input-style" />
+      </div>
+    </div>
+    <div class="flex items-center gap-3 justify-end mt-2">
+      <app-button (clicked)="closeModal.emit()">
+        Cancel
+      </app-button>
+      <button type="submit" [disabled]="!isFormValid()"
+        [class]="isFormValid()
+          ? 'flex w-fit self-end rounded-md px-8 py-2 text-center font-medium text-white bg-[#cf04a9] hover:bg-[#9f0885]'
+          : 'flex w-fit self-end rounded-md px-8 py-2 text-center font-medium text-white cursor-not-allowed bg-gray-400'">
+        Add
+      </button>
+    </div>
+
+  </form>
+</div>

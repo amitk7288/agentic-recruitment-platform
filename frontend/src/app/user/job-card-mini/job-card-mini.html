@@ -1,0 +1,38 @@
+<div class="relative flex flex-col gap-2.5 rounded-md border border-[#c8c8c8] bg-white px-3 py-3 text-rd-black">
+  <div id="heart" class="absolute right-3 text-2xl">
+    <ng-icon name="featherHeart" />
+  </div>
+  <div id="header" class="grid grid-cols-[90%_auto] justify-between">
+    <div class="flex flex-col gap-1">
+      <div id="logo" class="hidden text-sm font-bold md:block md:mb-3">
+        <div class="border-2 border-[#c8c8c8] rounded-lg p-[5px] w-fit">
+          <img src="https://resources.reed.co.uk/profileimages/logos/thumbs/Logo_28670.png" alt="company logo"
+            class="w-[85px] h-auto" />
+        </div>
+      </div>
+      <a routerLink="/jobpage" class="jobtitle font-medium text-rd-blue">
+        {{ title() }}
+      </a>
+      <p class="date text-sm font-normal">
+        Posted by 
+        <a href="#" class="font-medium text-rd-blue">
+          Searchability
+        </a>
+      </p>
+    </div>
+  </div>
+  <div id="main" class="meta grid text-sm md:text-base">
+    <div class="salary flex items-center gap-2">
+      <ng-icon name="remixMoneyPoundCircleLine" class="text-base font-medium" />
+      <p>£55,000 - £70,000</p>
+    </div>
+    <div class="time flex items-center gap-2">
+      <ng-icon name="featherClock" class="text-base font-medium" />
+      <p>Permanent, full</p>
+    </div>
+    <div class="location flex items-center gap-2">
+      <ng-icon name="featherMapPin" class="text-base font-medium" />
+      <p>Warwick, Warwickshire</p>
+    </div>
+  </div>
+</div>

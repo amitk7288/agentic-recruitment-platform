@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
+import { About } from './user/about/about';
+import { UserProfile } from './user/profile/user-profile/user-profile'
 import { ErrorPage } from './shared/error-page/error-page';
 import { authGuard } from '../app/guards/auth-guard';
 
@@ -20,6 +22,8 @@ export const appRoutes: Routes = [
   { path: '', component: Home },
   { path: 'courses', component: Courses },
   { path: 'career-advice', component: CareerAdvice },
+  { path: 'user/about', component: About },
+  {path: 'test/profile', component: UserProfile},
   {
     path: 'profile',
     canActivate: [authGuard],
@@ -35,4 +39,3 @@ export const appRoutes: Routes = [
     data: { hideFooter: true, hideHeader: true },
   },
 ];
-

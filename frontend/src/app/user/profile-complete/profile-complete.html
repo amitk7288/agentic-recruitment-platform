@@ -1,0 +1,70 @@
+<div class="flex flex-col gap-3">
+  <div class="flex h-fit items-center justify-between gap-3">
+    @for (section of completedSections(); track $index) {
+    <app-section-completed [highlight]="$index < completedCount()" />
+    }
+  </div>
+
+  <div>
+    <p class="font-bold text-rddrkPink">
+      {{ completedCount() }}/6 complete
+    </p>
+  </div>
+
+  <ul class="flex flex-col gap-3">
+    <li class="flex items-center justify-between">
+      <p class="text-sm font-bold">About you</p>
+      @if (about()) {
+      <ng-icon name="featherCheckCircle" class="text-xl text-rdpink" />
+      } @else {
+      <ng-icon name="featherCircle" class="text-xl text-gray-400" />
+      }
+    </li>
+    <li class="flex items-center justify-between">
+      <p class="text-sm font-bold">CV Upload</p>
+      @if (cv()) {
+      <ng-icon name="featherCheckCircle" class="text-xl text-rdpink" />
+      } @else {
+      <ng-icon name="featherCircle" class="text-xl text-gray-400" />
+      }
+    </li>
+    <li class="flex items-center justify-between">
+      <p class="text-sm font-bold">Looking for</p>
+      @if (looking()) {
+      <ng-icon name="featherCheckCircle" class="text-xl text-rdpink" />
+      } @else {
+      <ng-icon name="featherCircle" class="text-xl text-gray-400" />
+      }
+    </li>
+    <li class="flex items-center justify-between">
+      <p class="text-sm font-bold">Status and availability</p>
+      @if (status()) {
+      <ng-icon name="featherCheckCircle" class="text-xl text-rdpink" />
+      } @else {
+      <ng-icon name="featherCircle" class="text-xl text-gray-400" />
+      }
+    </li>
+    <li class="flex items-center justify-between">
+      <p class="text-sm font-bold">Work experience</p>
+      @if (exp()) {
+      <ng-icon name="featherCheckCircle" class="text-xl text-rdpink" />
+      } @else {
+      <ng-icon name="featherCircle" class="text-xl text-gray-400" />
+      }
+    </li>
+    <li class="flex items-center justify-between">
+      <p class="text-sm font-bold">Qualifications</p>
+      @if (qual()) {
+      <ng-icon name="featherCheckCircle" class="text-xl text-rdpink" />
+      } @else {
+      <ng-icon name="featherCircle" class="text-xl text-gray-400" />
+      }
+    </li>
+  </ul>
+
+  @if (!isProfile()) {
+  <app-button>
+    <a routerLink="/profile">Update my profile</a>
+  </app-button>
+  }
+</div>

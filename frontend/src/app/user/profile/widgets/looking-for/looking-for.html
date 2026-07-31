@@ -1,0 +1,16 @@
+<app-info-pod #infoPod podTitle="Looking for" headerLink="Edit">
+
+  <ng-icon podHeaderButton name="featherEdit" />
+
+  <ul class="flex flex-col gap-3">
+    <app-info-text title="Desired job title" [body]="desiredJobTitle()" />
+    <app-info-text title="Salary" [body]="salary()" />
+    <app-info-text title="Location" [body]="location()" />
+    <app-info-text title="Job type" [body]="jobType()" />
+  </ul>
+
+  <ng-template #modalContent>
+    <app-looking-for-modal (closeModal)="infoPod.isOpen.set(false)"/>
+  </ng-template>
+
+</app-info-pod>

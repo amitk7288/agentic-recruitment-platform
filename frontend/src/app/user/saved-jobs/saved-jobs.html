@@ -1,0 +1,6 @@
+<app-card-side-scroll>
+  @for (job of savedJobs(); track job.jobId) {
+  <app-job-card [jobId]="job.jobId" [title]="job.jobTitle" [employer]="job.employerName" [max]="job.maximumSalary"
+    [min]="job.minimumSalary" [loc]="job.locationName" [date]="job.date ? formatDate(job.date) : ''" />
+  }
+</app-card-side-scroll>

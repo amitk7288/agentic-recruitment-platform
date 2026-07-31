@@ -1,4 +1,10 @@
-import { Component, input, signal } from '@angular/core';
+import {
+  Component,
+  input,
+  signal,
+  contentChild,
+  TemplateRef,
+} from '@angular/core';
 import { Modal } from '../modal/modal';
 
 @Component({
@@ -8,13 +14,7 @@ import { Modal } from '../modal/modal';
 })
 export class InfoPod {
   isOpen = signal<boolean>(false);
-  title = input.required<string>();
-  headerLink = input.required<string>();
-
-  openModal() {
-    this.isOpen.set(true);
-  }
-  closeModal() {
-    this.isOpen.set(false);
-  }
+  podTitle = input.required<string>();
+  headerLink = input<string>();
+  modalContent = contentChild<TemplateRef<unknown>>('modalContent');
 }

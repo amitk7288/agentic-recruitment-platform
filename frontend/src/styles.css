@@ -6,6 +6,7 @@
 
   /* Colours */
   --color-rd-pink: #ff03cd;
+  --color-rd-black: #0f151a;
   --color-rd-green: #4fb442;
   --color-rd-blue: #1e1ef0;
   --color-rd-drkblue: #081351;
@@ -20,9 +21,29 @@
   }
 }
 
+@layer utilities {
+  .label-style {
+    color: #0f151a;
+    font-weight: 700;
+  }
+  .input-style {
+    border-radius: 6px;
+    padding: 10px 15px;
+    border: 1px solid #0f151a;
+  }
+  .styled-select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance:none;
+}
+}
+
 .nav-active-border-pink::after {
   border-color: var(--color-rd-pink);
 }
 .nav-active-border-green::after {
   border-color: var(--color-rd-green);
+}
+.slick-slide > div {
+ margin-right: 20px; 
 }
