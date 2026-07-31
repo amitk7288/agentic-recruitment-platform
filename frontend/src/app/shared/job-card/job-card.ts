@@ -30,12 +30,16 @@ export class JobCard {
   max = input<number>();
   min = input<number>();
   loc = input<string>();
-  jobId = input<string>();
+  jobId = input<number>();
   job = input<any>();
 
   jobSaved = signal<boolean>(false);
   jobApplied = signal<boolean>(false);
 
-  handleSaveClick() {}
-  handleApplyClick() {}
+  handleSaveClick() {
+    console.log('clicked')
+  }
+  handleApplyClick() {
+    console.log('clicked');
+  }
 }

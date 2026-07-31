@@ -1,0 +1,47 @@
+<div>
+  <h2 class="mb-3 text-xl font-bold">About you</h2>
+  <form class="flex flex-col gap-3" (submit)="handleSubmit($event)">
+    <div class="flex gap-3">
+      <div class="flex flex-col gap-1 flex-1/2">
+        <label class="label-style" for="name">
+          First Name*
+        </label>
+        <input type="text" id="name" placeholder="First name" class="input-style" [formField]="aboutForm.firstName" />
+      </div>
+      <div class="flex flex-col gap-1 flex-1/2">
+        <label class="label-style" for="name">
+          Last Name*
+        </label>
+        <input type="text" id="name" placeholder="First name" class="input-style" [formField]="aboutForm.lastName" />
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label class="label-style" for="role">
+        Current/previous job title*
+      </label>
+      <input type="text" id="role" placeholder="Role" class="input-style" [formField]="aboutForm.jobTitle" />
+    </div>
+    <div class="flex flex-col gap-1">
+      <label class="label-style" for="tel">
+        Contact number
+      </label>
+      <input type="tel" id="tel" placeholder="Contact number" class="input-style" [formField]="aboutForm.tel" />
+    </div>
+    <div class="flex flex-col gap-1">
+      <label class="label-style" for="email">
+        Email
+      </label>
+      <input type="email" id="email" placeholder="Email" class="input-style" [formField]="aboutForm.email" />
+    </div>
+    <div class="flex items-center gap-3 justify-end mt-2">
+      <app-button (clicked)="closeModal.emit()">
+        Cancel
+      </app-button>
+      <button type="submit"
+        class="flex w-fit self-end rounded-md bg-[#cf04a9] px-8 py-2 text-center font-medium text-white hover:bg-[#9f0885]">
+        Save
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,96 +1,200 @@
-# NgReed
+# Reed 2.0 🚀
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+An AI-powered recruitment platform that connects employers and candidates through intelligent search, semantic matching, and autonomous AI workflows.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+Built as a modern recruitment ecosystem inspired by platforms like Reed, enhanced with AI agents that automate candidate discovery, job matching, and recruitment workflows.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+![Reed 2.0 Screenshot](./screenshots/home.png)
 
-## Run tasks
+---
 
-To run tasks with Nx use:
+## ✨ Overview
 
-```sh
-npx nx <target> <project-name>
-```
+Reed 2.0 is a next-generation recruitment platform designed to improve how candidates discover opportunities and how employers find talent.
 
-For example:
+Unlike traditional job boards that rely on keyword matching, Reed 2.0 uses AI-powered semantic search and intelligent workflows to understand:
 
-```sh
-npx nx build myproject
-```
+- Candidate skills and experience
+- Job requirements and context
+- Career goals and preferences
+- Employer hiring needs
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+The platform combines modern frontend architecture with AI-driven automation to create a smarter recruitment experience.
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+---
 
-## Add new projects
+## 🚀 Key Features
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+### 🤖 AI Candidate Matching
 
-To install a new plugin you can use the `nx add` command. Here's an example of adding the React plugin:
-```sh
-npx nx add @nx/react
-```
+Uses intelligent matching algorithms to connect candidates with relevant roles based on:
 
-Use the plugin's generator to create new projects. For example, to create a new React app or library:
+- Skills
+- Experience
+- Technologies
+- Career preferences
+- Job descriptions
 
-```sh
-# Generate an app
-npx nx g @nx/react:app demo
+---
 
-# Generate a library
-npx nx g @nx/react:lib some-lib
-```
+### 🔎 Semantic Job Search
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+Search beyond keywords.
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Instead of requiring exact matches, AI understands the meaning behind searches.
 
-## Set up CI!
+Example:
 
-### Step 1
+> "Frontend developer experienced with modern JavaScript frameworks"
 
-To connect to Nx Cloud, run the following command:
+Can match candidates with:
 
-```sh
-npx nx connect
-```
+- Angular
+- React
+- TypeScript
+- JavaScript
+- UI engineering experience
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
+---
 
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### 🧠 AI Recruitment Agents
 
-### Step 2
+Autonomous AI workflows designed to assist recruiters by:
 
-Use the following command to configure a CI workflow for your workspace:
+- Finding suitable candidates
+- Ranking applicants
+- Summarising CVs
+- Highlighting skill matches
+- Reducing manual screening time
 
-```sh
-npx nx g ci-workflow
-```
+---
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### 👤 Candidate Profiles
 
-## Install Nx Console
+Candidates can:
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+- Create professional profiles
+- Upload CVs
+- Showcase technical skills
+- Track applications
+- Receive AI-powered job recommendations
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+---
 
-## Useful links
+### 🏢 Employer Dashboard
 
-Learn more:
+Recruiters can:
 
-- [Learn more about this workspace setup](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- Create job listings
+- Manage applicants
+- Review AI-ranked candidates
+- Streamline hiring workflows
 
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- Angular 20
+- TypeScript
+- Nx Monorepo
+- Tailwind CSS
+- RxJS
+- Angular Signals
+
+## Backend
+
+- NestJS
+- Node.js
+- REST APIs
+- MongoDB
+
+## AI
+
+- Semantic search
+- AI agents
+- LLM integrations
+- Intelligent matching workflows
+
+## Testing
+
+- Vitest
+- Playwright
+
+## DevOps
+
+- GitHub Actions
+- CI/CD pipelines
+
+---
+
+# 🏗 Architecture
+
+The project uses an Nx monorepo architecture:
+
+apps/
+└── frontend
+
+libs/
+├── ui
+├── auth
+├── jobs
+├── profiles
+├── data-access
+└── models
+
+
+This provides:
+
+- Shared libraries
+- Scalable architecture
+- Clear domain separation
+- Maintainable enterprise structure
+
+---
+
+# 📸 Screenshots
+
+## Job Search
+
+![Job Search](./screenshots/search.png)
+
+## Candidate Profile
+
+![Profile](./screenshots/profile.png)
+
+## Employer Dashboard
+
+![Dashboard](./screenshots/dashboard.png)
+
+---
+
+# 🧪 Running Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/ng-reed-clone.git
+
+Install dependencies:
+
+npm install
+
+Start the application:
+
+npx nx serve frontend
+🎯 Project Goals
+
+Reed 2.0 aims to demonstrate how AI can transform recruitment platforms by:
+
+✅ Reducing manual candidate screening
+✅ Improving job discovery
+✅ Creating better candidate-employer matches
+✅ Automating repetitive recruitment workflows
+
+👨‍💻 Author
+
+Built by Amit K
+
+Full Stack Developer specialising in React, Next.js, Angular, TypeScript, modern frontend architecture and AI-powered applications.

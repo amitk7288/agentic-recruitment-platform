@@ -7,5 +7,5 @@ import { Component, input } from '@angular/core';
 })
 export class InfoText {
   title = input.required<string>();
-  body = input.required<string>();
+  body = input<string | null>(null);
 }
