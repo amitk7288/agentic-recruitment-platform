@@ -1,0 +1,124 @@
+<app-job-search />
+
+<div>
+  <!-- mobile search trigger -->
+  <div class="border-b bg-white p-[15px] lg:hidden">
+    <button class="flex items-center gap-3 border border-rd-black px-3 py-1.5 cursor-pointer" (click)="isOpen.set(true)">
+      <ng-icon name="featherSearch" class="text-2xl text-[#FF00CD]" />
+      <p>{{ keywords() }} jobs</p>
+    </button>
+  </div>
+
+  <div class="border-t bg-[#f8f8f8] px-3 py-5 2xl:px-[50px]">
+
+    <!-- back + results count -->
+    <div class="mx-auto block max-w-[1280px] py-[20px]">
+      <button (click)="goBack()" class="flex items-center gap-1 cursor-pointer">
+        <ng-icon name="featherArrowLeftCircle" />
+        <p>Back</p>
+      </button>
+      <h1 class="text-lg font-bold">
+        Results: {{ totalResults() }} {{ keywords() }} {{ jobsLabel() }}
+      </h1>
+    </div>
+
+    <div class="mx-auto max-w-[1280px] md:flex md:gap-6">
+
+      <!-- filter sidebar -->
+      <div class="basis-[35%] lg:basis-[30%] xl:basis-[20%]">
+        <div class="flex items-center justify-start gap-5 pb-[20px] md:flex-col md:pb-[0px]">
+          <button
+            class="flex w-full max-w-[300px] items-center justify-center gap-1 rounded-[4px] border-2 border-[#081351] bg-white px-3 py-1.5 text-center font-medium text-[#081351] md:hidden cursor-pointer"
+            (click)="toggleFilter($event)">
+            <ng-icon name="featherSliders" class="text-xl" />
+            <p class="text-sm">Filter</p>
+          </button>
+        </div>
+
+        <div class="flex-col rounded-md border border-[#c8c8c8] bg-white py-2.5 pt-5 text-[#0f151a] mb-[20px]"
+          [class.hidden]="!showFilter()" [class.block]="showFilter()" [class.md:block]="true">
+          <p class="px-3 text-lg font-bold">Filter your search</p>
+
+          <!-- salary filter -->
+          <div class="border-b px-4 py-[15px]">
+            <p class="pb-3 font-bold">Salary range</p>
+            <div class="flex flex-col gap-1">
+              <label for="from-salary">From:</label>
+              <div class="rounded-lg border border-rd-black pr-3">
+                <select id="from-salary" class="block w-full rounded-lg p-2.5" (change)="handleSalaryFilter($event)">
+                  <option value="0">£ Any</option>
+                  <option value="10000">From £10,000</option>
+                  <option value="20000">£20,000</option>
+                  <option value="30000">£30,000</option>
+                  <option value="40000">£40,000</option>
+                  <option value="50000">£50,000</option>
+                  <option value="60000">£60,000</option>
+                  <option value="70000">£70,000</option>
+                  <option value="80000">£80,000</option>
+                  <option value="90000">£90,000</option>
+                  <option value="100000">£100,000+</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- date filter -->
+          <div class="px-4 py-[15px]">
+            <p class="pb-3 font-bold">Date posted</p>
+            <div class="rounded-lg border border-rd-black pr-3">
+              <select id="date-posted" class="block w-full rounded-lg p-2.5" (change)="handleDateFilter($event)">
+                <option value="Anytime">Anytime</option>
+                <option value="Today">Today</option>
+                <option value="Last 3 days">Last 3 days</option>
+                <option value="Last week">Last week</option>
+                <option value="Last 2 weeks">Last 2 weeks</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- job list -->
+      <div class="basis-[80%]">
+        <div class="flex flex-col gap-3">
+          @for (job of currentJobs(); track job.jobId) {
+          <app-job-card [jobId]="job.jobId" [title]="job.jobTitle" [date]="job.date ? formatDate(job.date) : ''"
+            [employer]="job.employerName" [max]="job.maximumSalary" [min]="job.minimumSalary"
+            [loc]="job.locationName" />
+          }
+        </div>
+
+        <!-- pagination -->
+        <div class="mt-5 flex flex-col gap-2.5 rounded-md border border-[#c8c8c8] bg-white px-3 py-2.5 text-[#0f151a]">
+          <div class="flex items-center justify-center gap-5 py-[20px]">
+            <button (click)="handlePreviousPage()" [disabled]="currentPage() === 1"
+              class="flex w-full max-w-[300px] items-center justify-center gap-1 rounded-[4px] border-2 border-[#081351] px-3 py-1.5 text-center font-medium text-[#081351] cursor-pointer disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-300 disabled:text-gray-500 disabled:opacity-60">
+              <ng-icon name="featherChevronLeft" class="text-xl" />
+              <p class="text-sm">Previous</p>
+            </button>
+            <button (click)="handleNextPage()" [disabled]="currentJobs().length < jobsPerPage"
+              class="flex w-full max-w-[300px] items-center justify-center gap-1 rounded-[4px] border-2 border-[#081351] px-3 py-1.5 text-center font-medium text-[#081351] cursor-pointer disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-300 disabled:text-gray-500 disabled:opacity-60">
+              <p class="text-sm">Next</p>
+              <ng-icon name="featherChevronRight" class="text-xl" />
+            </button>
+          </div>
+
+          <!-- page info -->
+          <div class="mt-4 flex items-center justify-center text-sm text-[#0f151a]">
+            <p>
+              Page {{ currentPage() }} - Showing jobs
+              {{ currentPage() * jobsPerPage - jobsPerPage + 1 }} -
+              {{ currentPage() * jobsPerPage | min: totalResults() }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@if (isOpen()) {
+<app-modal-dropdown (closed)="isOpen.set(false)">
+  <app-mobile-job-search />
+</app-modal-dropdown>
+}
