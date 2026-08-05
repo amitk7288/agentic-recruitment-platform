@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { form, FormField, FormRoot, required } from '@angular/forms/signals';
-import { ModalDropdown } from '../shared/modal-dropdown/modal-dropdown';
+import { ModalDropdown } from '../../shared/modal-dropdown/modal-dropdown';
 import { MobileJobSearch } from './mobile-job-search/mobile-job-search';
 
 @Component({

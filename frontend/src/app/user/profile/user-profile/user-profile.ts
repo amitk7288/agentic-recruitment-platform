@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { JobSearch } from '../../../job-search/job-search';
-import { MobileJobSearch } from '../../../job-search/mobile-job-search/mobile-job-search';
+import { JobSearch } from '../../../jobs/job-search/job-search';
+import { MobileJobSearch } from '../../../jobs/job-search/mobile-job-search/mobile-job-search';
 import { ModalDropdown } from '../../../shared/modal-dropdown/modal-dropdown';
 import { InfoPod } from '../../../shared/info-pod/info-pod';
 import { ProfileComplete } from '../../profile-complete/profile-complete';
