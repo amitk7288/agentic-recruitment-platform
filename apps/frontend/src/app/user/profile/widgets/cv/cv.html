@@ -1,0 +1,15 @@
+<app-info-pod #infoPod podTitle="CV" headerLink="Add">
+  <ng-icon podHeaderButton name="featherPlusCircle" />
+
+  <div>
+    <p>{{ cvValue() ? 'CV Added - ' + cvValue() : 'No CV added' }}</p>
+  </div>
+
+  <ng-template #modalContent>
+    <app-cv-modal
+      [cvValue]="cvValue()"
+      modalContent
+      (closeModal)="infoPod.isOpen.set(false)"
+    />
+  </ng-template>
+</app-info-pod>

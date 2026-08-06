@@ -1,0 +1,55 @@
+<app-info-pod #infoPod podTitle="About you" headerLink="Edit">
+  <span
+    podHeaderButton
+    class="flex items-center gap-2 text-rd-blue font-semibold"
+  >
+    <p>Edit</p>
+    <ng-icon name="featherEdit" />
+  </span>
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center justify-between">
+      <p class="text-[20px] font-bold text-rd-black">
+        {{firstName}} {{lastName}}
+      </p>
+      <input
+        type="file"
+        accept="image/*"
+        #imgPicker
+        (change)="handleFileChange($event)"
+        hidden
+      />
+      <button
+        (click)="handleUpdateImgClick($event)"
+        class="cursor-pointer rounded-full"
+        aria-label="Update profile picture"
+      >
+        <img
+          class="h-10 w-10 rounded-full object-cover"
+          [src]="preview()"
+          alt="profile pic"
+        />
+      </button>
+    </div>
+    <p class="text-base font-bold text-rd-black">{{jobTitle}}</p>
+    <div class="flex items-center gap-2">
+      <ng-icon name="featherPhone" class="text-lg" />
+      <p>{{tel}}</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <ng-icon name="featherMail" class="text-lg" />
+      <p>{{email}}</p>
+    </div>
+  </div>
+  <ng-template #modalContent>
+    <app-about-modal
+      modalContent
+      [firstName]="firstName"
+      [lastName]="lastName"
+      [jobTitle]="jobTitle"
+      [tel]="tel"
+      [email]="email"
+      [profilePic]="preview()"
+      (closeModal)="infoPod.isOpen.set(false)"
+    />
+  </ng-template>
+</app-info-pod>

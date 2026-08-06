@@ -1,8 +1,0 @@
-<app-card-side-scroll>
-  @if (appliedJobs && appliedJobs.length > 0) {
-  @for (job of appliedJobs; track job.jobId) {
-  <app-job-card [job]="job" [jobId]="job.jobId" [title]="job.title" [date]="job.date ? formatDate(job.date) : ''"
-    [employer]="job.employer" [max]="job.max" [min]="job.min" [loc]="job.loc" />
-  }
-  }
-</app-card-side-scroll>
