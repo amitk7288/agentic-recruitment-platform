@@ -1,0 +1,23 @@
+<div [ngClass]="isOpen() ? 'block' : 'hidden'">
+  <div class="fixed inset-0 z-[99] bg-gray-900/80"></div>
+  <dialog
+    class="fixed inset-0 z-[100] m-0 p-0 max-w-none max-h-none w-full h-full flex items-center justify-center bg-transparent"
+    aria-modal="true"
+    tabindex="0"
+    (click)="closeOnBackdrop($event)"
+    (keydown.escape)="closed.emit()"
+  >
+    <div
+      class="relative w-[90vw] rounded-2xl border border-gray-200 bg-white py-4 px-5 shadow-lg sm:h-auto sm:w-[600px]"
+    >
+      <ng-icon
+        name="featherX"
+        class="absolute right-4 cursor-pointer text-xl text-slate-500"
+        (click)="closed.emit()"
+      />
+      <div class="no-scrollbar max-h-[80vh] overflow-y-auto">
+        <ng-container *ngTemplateOutlet="content() ?? null" />
+      </div>
+    </div>
+  </dialog>
+</div>

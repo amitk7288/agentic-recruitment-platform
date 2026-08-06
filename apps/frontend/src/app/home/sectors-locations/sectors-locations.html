@@ -1,0 +1,38 @@
+<div
+  class="py-[50px] px-[23px] md:mx-[15px] md:px-[15px] lg:grid lg:justify-center flex flex-col gap-4"
+>
+  <div class="flex justify-center gap-[30px] text-lg">
+    <button
+      (click)="showSectors()"
+      class="cursor-pointer flex-col justify-end gap-2 p-3 font-medium text-rd-blue"
+      [class.text-rd-pink]="isSector"
+      [class.after:block]="isSector"
+      [class.after:w-full]="isSector"
+      [class.after:border-b-[5px]]="isSector"
+      [class.after:border-rd-pink]="isSector"
+    >
+      Search by sector
+    </button>
+    <button
+      (click)="showLocations()"
+      class="cursor-pointer flex-col justify-end gap-2 p-3 font-medium text-rd-blue"
+      [class.text-rd-pink]="isLocation"
+      [class.after:block]="isLocation"
+      [class.after:w-full]="isLocation"
+      [class.after:border-b-[5px]]="isLocation"
+      [class.after:border-rd-pink]="isLocation"
+    >
+      Search by location
+    </button>
+  </div>
+
+  <div
+    class="grid grid-cols-2 grid-rows-auto gap-5 md:gap-10 lg:grid-cols-4 lg:max-w-[1280px]"
+  >
+    @if (isSector) { @for (item of secLocData[0]; track item.id) {
+    <app-sec-loc-grid-item [title]="item.title" [img]="item.img" />
+    } } @if (isLocation) { @for (item of secLocData[1]; track item.id) {
+    <app-sec-loc-grid-item [title]="item.title" [img]="item.img" />
+    } }
+  </div>
+</div>

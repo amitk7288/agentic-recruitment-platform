@@ -1,0 +1,14 @@
+<div
+  class="fixed inset-0 z-[99]"
+  (click)="closed.emit()"
+  (keydown.enter)="closed.emit()"
+  tabindex="0"
+  aria-label="Close side menu"
+></div>
+<dialog class="fixed inset-0 z-[100] block top-0 left-0" aria-modal="true">
+  <div class="fixed top-0 left-0 w-[280px] bg-rdblue px-0 h-[100vh] pt-[60px]">
+    <div class="no-scrollbar max-h-[80vh] overflow-y-auto">
+      <ng-content />
+    </div>
+  </div>
+</dialog>

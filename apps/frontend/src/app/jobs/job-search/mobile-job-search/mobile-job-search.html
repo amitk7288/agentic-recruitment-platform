@@ -1,0 +1,50 @@
+<div>
+  <p class="pt-[15px] text-lg font-bold lg:text-xl">Search</p>
+  <form
+    class="flex flex-col gap-1 md:flex-row md:items-center"
+    (ngSubmit)="handleSubmit($event)"
+  >
+    <div class="md:basis-[40%]">
+      <label for="job-title" class="mb-1 text-lg text-rd-black md:block"
+        >What</label
+      >
+      <input
+        type="search"
+        id="job-title"
+        placeholder='e.g. "account manager"'
+        [ngModel]="what()"
+        (ngModelChange)="what.set($event)"
+        [class.border-red-500]="errorWhat()"
+        class="w-full rounded-md border border-rd-black px-4 py-2.5 lg:py-3"
+      />
+      <p class="text-sm text-red-500" [class.invisible]="!errorWhat()">
+        Required field
+      </p>
+    </div>
+
+    <div class="md:basis-[40%]">
+      <label for="job-location" class="mb-1 text-lg text-rd-black md:block"
+        >Where</label
+      >
+      <input
+        type="search"
+        id="job-location"
+        placeholder='"town or postcode"'
+        [ngModel]="where()"
+        (ngModelChange)="where.set($event)"
+        [class.border-red-500]="errorWhere()"
+        class="w-full rounded-md border border-rd-black px-4 py-2.5 lg:py-3"
+      />
+      <p class="text-sm text-red-500" [class.invisible]="!errorWhere()">
+        Required field
+      </p>
+    </div>
+
+    <button
+      type="submit"
+      class="mb-[20px] rounded-md bg-[#cf04a9] px-3 py-2 font-medium text-white hover:bg-[#9f0885] md:mb-[0px] md:mt-2.5 md:flex md:basis-[20%] md:justify-center md:self-center md:px-4 md:py-[13px] lg:py-[13px]"
+    >
+      Search jobs
+    </button>
+  </form>
+</div>
